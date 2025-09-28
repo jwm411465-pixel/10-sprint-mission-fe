@@ -1,0 +1,195 @@
+/* 공통 속성 */
+a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #3692FF;
+  font-family: Pretendard, sans-serif;
+  text-align: center;
+  justify-content: center;
+}
+a:hover {
+  cursor: pointer;
+}
+.blue {
+  font-family: Pretendard;
+  color: #3692FF;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+}
+.paragraph {
+  font-family: Pretendard, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 140%;
+  display: inline-block;
+  color: #374151;
+}
+.small-paragraph {
+  font-family: Pretendard, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #374151;
+  line-height: 32px;
+}
+body {
+  width: 1920px;
+}
+
+
+
+/* Header */
+header {
+  position: absolute;
+  display: block;
+  background-color: #fff;
+  z-index: 9999;
+  height: 70px;
+}
+.header {
+  display: flex;
+  box-sizing: border-box; /*가로에 꽉채우기*/
+  width: 100%;
+  position: fixed;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 200px ;
+  border: 1px solid #DFDFDF;
+  background-color: #FFF;
+}
+
+.header .main-logo {
+  display: flex;
+  width: 153px;
+  height: 51px;
+}
+
+.header .main-logo span {
+  position: relative;
+  font-family: ROKAF Sans, sans-serif;
+  font-weight: 700;
+  color: #3692FF;
+  height: 35px;
+  width: 103px;
+  top: 9.76px;
+  /* left: 48.59px; */
+  line-height: 100%;
+  font-size: 25.63px;
+  text-align: center;
+  align-content: center;
+}
+.header a {
+  width: 128px;
+  height: auto;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600;
+  color: #f3f4f6;
+  padding: 12px 23px;
+  gap: 10px;
+  border-radius: 20px;
+}
+/* Main */
+.section1 {
+  position: relative;
+  background-color: #CFE5FF;
+  display: block;
+  width: auto;
+  height: 540px;
+  top: 70px;
+  padding-top: 100px;
+}
+.section1-word {
+  position: absolute;
+  display: block;
+  top: 200px;
+  left: 405px;
+  gap: 7px;
+}
+.word1 {
+  display: inline-flex;
+  position: relative;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 60px;
+  top: -150px;
+}
+.word1 a {
+  font-size: 20px;
+  line-height: 32px;
+  padding: 16px 124px;
+  color: #FFF;
+  border-radius: 50px;
+}
+.section1 .panda {
+  position: relative;
+  width: 746px;
+  height: 340px;
+  bottom: -100px;
+}
+
+.section1 .paragraph {
+  align-items: center;
+
+}
+
+
+.section2 {
+  width: auto;
+  /* height: 720px; */
+  position: relative;
+  top: 70px;
+  text-align: center;
+}
+.section2 .section2-main {
+  display: inline-block; /*인라인 요소에 크기 설정*/
+  background-color: #FCFCFC;
+  position: absolute;
+  width: 988px;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+.section2-word {
+  display: inline-block;
+  width: 274px;
+  height: 238px;
+  padding-left: 60px;
+}
+.section3 {
+  width: auto;
+  /* height: 70px; */
+  position: relative;
+  top: 70px;
+  text-align: center;
+}
+.section3 .section3-main {
+  display: inline-block; /*인라인 요소에 크기 설정*/
+  background-color: #FCFCFC;
+  position: absolute;
+  width: 988px;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+.section3 .section3-word {
+  display: inline-block;
+  width: 274px;
+  height: 238px;
+  padding-left: 60px;
+}
+.section4 {
+  width: auto;
+}
+
+.section5 {
+  width: auto;
+  background-color: #CFE5FF;
+}
+
+/* Footer */
+.footer {
+
+}
