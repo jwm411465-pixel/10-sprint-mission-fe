@@ -24,6 +24,7 @@ a:hover {
   line-height: 140%;
   display: inline-block;
   color: #374151;
+  display: inline-block;
 }
 .small-paragraph {
   font-family: Pretendard, sans-serif;
@@ -31,6 +32,7 @@ a:hover {
   font-weight: 500;
   color: #374151;
   line-height: 32px;
+  display: inline-block;
 }
 body {
   width: 1920px;
@@ -68,7 +70,7 @@ header {
 
 .header .main-logo span {
   position: relative;
-  font-family: ROKAF Sans, sans-serif;
+  font-family: ROKAF Sans;
   font-weight: 700;
   color: #3692FF;
   height: 35px;
@@ -96,10 +98,10 @@ header {
   position: relative;
   background-color: #CFE5FF;
   display: block;
-  width: auto;
+  width: 100%;
   height: 540px;
   top: 70px;
-  padding-top: 100px;
+  padding: 138px 344px;
 }
 .section1-word {
   position: absolute;
@@ -137,16 +139,18 @@ header {
 
 
 .section2 {
-  width: auto;
+  width: 100%;
   position: relative;
   top: 70px;
   text-align: center;
   display: flex;
   flex-direction: column;
+  gap: 64px;
+  padding: 138px 342px;
+  background-color: #FCFCFC;
 }
 .section2 .section2-main {
   display: inline-block;
-  background-color: #FCFCFC;
   width: 988px;
   height: auto;
   margin: 0 auto;
@@ -160,8 +164,13 @@ header {
   padding-left: 60px;
   top: 10px;
 }
+.section2 .img {
+  display: inline-block;
+  width: 588px;
+  height: 444px;
+}
 .section3 {
-  width: auto;
+  width: 100%;
   margin-top:70px;
   text-align: center;
 }
@@ -180,18 +189,18 @@ header {
   padding-left: 60px;
 }
 .section4 {
-  width: auto;
+  width: 100%;
 }
 
 .section5 {
-  width: auto;
+  width: 100%;
   background-color: #CFE5FF;
 }
 
 /* Footer */
 footer {
   display: flex;
-  width: 1920px;
+  width: 100%;
   height: 160px;
   padding: 23px 200px;
   align-items: flex-start;
