@@ -35,7 +35,7 @@ a:hover {
   display: inline-block;
 }
 body {
-  width: 1920px;
+  background-size: cover;
 }
 
 
@@ -116,7 +116,7 @@ header {
   flex-direction: column;
   gap: 10px;
   padding-bottom: 60px;
-  top: -150px;
+  right: -700px;
 }
 .word1 a {
   font-size: 20px;
@@ -129,7 +129,8 @@ header {
   position: relative;
   width: 746px;
   height: 340px;
-  bottom: -100px;
+  bottom: -300px;
+  right: -700px;
 }
 
 .section1 .paragraph {
@@ -190,8 +191,21 @@ header {
 }
 .section4 {
   width: 100%;
+  margin-top: 70px;
+  text-align: center;
 }
-
+.section4 .section4-main {
+  display: inline-block;
+  background-color: #FCFCFC;
+  justify-content: center;
+  align-items: center;
+}
+.section4 .section4-word {
+  display: inline-block;
+  width: 274px;
+  height: 238px;
+  padding-right: 60px;
+}
 .section5 {
   width: 100%;
   background-color: #CFE5FF;
