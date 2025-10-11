@@ -3,7 +3,7 @@ a {
   display: inline-block;
   text-decoration: none;
   background-color: #3692FF;
-  font-family: Pretendard, sans-serif;
+  font-family: 'Pretendard', sans-serif;
   text-align: center;
   justify-content: center;
 }
@@ -11,14 +11,14 @@ a:hover {
   cursor: pointer;
 }
 .blue {
-  font-family: Pretendard;
+  font-family: 'Pretendard';
   color: #3692FF;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
 }
 .paragraph {
-  font-family: Pretendard, sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   font-size: 40px;
   line-height: 140%;
@@ -27,7 +27,7 @@ a:hover {
   display: inline-block;
 }
 .small-paragraph {
-  font-family: Pretendard, sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 24px;
   font-weight: 500;
   color: #374151;
@@ -37,8 +37,6 @@ a:hover {
 body {
   background-size: cover;
 }
-
-
 
 /* Header */
 header {
@@ -93,7 +91,11 @@ header {
   gap: 10px;
   border-radius: 20px;
 }
+
 /* Main */
+
+/* section1 */
+
 .section1 {
   position: relative;
   background-color: #CFE5FF;
@@ -138,6 +140,7 @@ header {
 
 }
 
+/* section2 */
 
 .section2 {
   width: 100%;
@@ -170,6 +173,9 @@ header {
   width: 588px;
   height: 444px;
 }
+
+/* section3 */
+
 .section3 {
   width: 100%;
   margin-top:70px;
@@ -189,6 +195,9 @@ header {
   height: 238px;
   padding-left: 60px;
 }
+
+/* section4 */
+
 .section4 {
   width: 100%;
   margin-top: 70px;
