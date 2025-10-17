@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
   const loginBtn = document.getElementById('loginBtn');
 
-  // 공통: 에러 표시/제거
+  
   function showError(inputEl, message) {
     clearError(inputEl);
 
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     p.className = 'error-message';
     p.textContent = message;
 
-    // input의 부모(.username / .password)에 메시지 삽입
+    
     inputEl.parentElement.appendChild(p);
   }
 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (old) old.remove();
   }
 
-  // 개별 검증
+  
   function validateEmail() {
     const value = emailInput.value.trim();
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return false;
     }
 
-    // HTML5 내장 검사 사용 (type="email")
+    
     if (emailInput.validity.typeMismatch) {
       showError(emailInput, '잘못된 이메일 형식입니다.');
       return false;
@@ -60,27 +60,27 @@ document.addEventListener('DOMContentLoaded', () => {
     return true;
   }
 
-  // 버튼 활성/비활성 제어
+  
   function setButtonState() {
     const ok = validateEmail() && validatePassword();
     loginBtn.disabled = !ok;
   }
 
-  // 입력 중에도 실시간으로 상태 반영
+  
   emailInput.addEventListener('input', setButtonState);
   passwordInput.addEventListener('input', setButtonState);
 
-  // 포커스 아웃 시 메시지 확실히 노출
+  
   emailInput.addEventListener('focusout', validateEmail);
   passwordInput.addEventListener('focusout', validatePassword);
 
-  // 제출 전 최종 검증 (막기)
+  
   form.addEventListener('submit', (e) => {
     const ok = validateEmail() && validatePassword();
     loginBtn.disabled = !ok;
     if (!ok) e.preventDefault();
   });
 
-  // 최초 로드 시 초기 상태 세팅
+  
   setButtonState();
 });
