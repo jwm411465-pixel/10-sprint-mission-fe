@@ -111,3 +111,18 @@ form button {
 .frist span {
   align-items: center;
 }
+
+.error-border {
+  border: 2px solid red;
+  outline: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
