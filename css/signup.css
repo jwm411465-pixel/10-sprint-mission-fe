@@ -23,13 +23,13 @@ body {
 }
 .header span {
   display: inline-block;
-  font-family: ROKAF Snas, sans-serif;
+  font-family: ROKAF Sans, sans-serif;
   font-size: 66.34px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   color: #3692FF;
-  padding-bottom: 40;
+  padding-bottom: 40px;
   flex-direction: row;
 
 }
@@ -119,4 +119,18 @@ form button {
   /* display: inline; */
   align-items: center;
   white-space: nowrap;
+}
+
+.error-border {
+  border: 2px solid red;
+  outline: none;
+}
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
