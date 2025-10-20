@@ -72,3 +72,5 @@ FormData.addEventListener('submit', (e) => {
   signupBtn.disabled = !ok;
   if (!ok) e.preventDefault();
 });
+
+setButtonState();
