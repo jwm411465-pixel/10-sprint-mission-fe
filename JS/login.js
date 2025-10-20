@@ -76,31 +76,31 @@ form.addEventListener('submit', (e) => {
 
 setButtonState();
 
-
-//예제 DB
 const USER_DATA = [
-           { email: 'codeit1@codeit.com', password: "codeit101!" },
-	           { email: 'codeit2@codeit.com', password: "codeit202!" },
-           	{ email: 'codeit3@codeit.com', password: "codeit303!" },
-	           { email: 'codeit4@codeit.com', password: "codeit404!" },
-	           { email: 'codeit5@codeit.com', password: "codeit505!" },
-	           { email: 'codeit6@codeit.com', password: "codeit606!" },
-]
+  { email: 'codeit1@codeit.com', password: "codeit101!" },
+  { email: 'codeit2@codeit.com', password: "codeit202!" },
+  { email: 'codeit3@codeit.com', password: "codeit303!" },
+  { email: 'codeit4@codeit.com', password: "codeit404!" },
+  { email: 'codeit5@codeit.com', password: "codeit505!" },
+  { email: 'codeit6@codeit.com', password: "codeit606!" },
+];
 
-if (!form || !emailInput || !passwordInput) {
-  console.warn('필수 요소를 찾지 못했습니다. HTML의 id와 action을 확인하세요.')
-  return;
-}
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  
+
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
-})
-const user = USER_DATA.find(u => u.email.toLowerCase() === email.toLowerCase());
 
-if (!uesr || user.password !== password) {
-  alert('비밀번호가 일치하지 않습니다.');
-  return
-}
-window.location.assign('/item');
+  if (!email || !password) {
+    alert('이메일과 비밀번호를 입력해주세요.');
+    return;
+  }
+
+  const user = USER_DATA.find(u => u.email.toLowerCase() === email.toLowerCase());
+
+  if (!user || user.password !== password) {
+    alert('비밀번호가 일치하지 않습니다.');
+    return;
+  }
+  window.location.assign('/items')
+});
