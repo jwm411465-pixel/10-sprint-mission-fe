@@ -68,13 +68,22 @@ emailInput.addEventListener('focusout', validateEmail);
 passwordInput.addEventListener('focusout', validatePassword);
 
 form.addEventListener('submit', (e) => {
-  const ok = validateEmail() && validatePassword();
-  loginBtn.disabled = !ok;
-  if (!ok) e.preventDefault();
-});
+  e.preventDefault();
+
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trin();
+
+  if (!email || !password) {
+    showErrorModal('이메일과 비밀번호를 입력해주세요.');
+    return;
+  }
+  window.location.assign('/item')
+})
 
 
 setButtonState();
+
+import { showErrorModal } from './utils/modal.js';
 
 const USER_DATA = [
   { email: 'codeit1@codeit.com', password: "codeit101!" },
@@ -85,22 +94,31 @@ const USER_DATA = [
   { email: 'codeit6@codeit.com', password: "codeit606!" },
 ];
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('form[action="login"]');
+  const emailInput = document.getElementById('username');
+  const passwordInput = document.getElementById('password');
 
-  const email = emailInput.value.trim();
-  const password = passwordInput.value.trim();
+  if (!form) return;
 
-  if (!email || !password) {
-    alert('이메일과 비밀번호를 입력해주세요.');
-    return;
-  }
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  const user = USER_DATA.find(u => u.email.toLowerCase() === email.toLowerCase());
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
 
-  if (!user || user.password !== password) {
-    alert('비밀번호가 일치하지 않습니다.');
-    return;
-  }
-  window.location.assign('/items')
+    if (!email || !password) {
+      showErrorModal('이메일과 비밀번호를 입력해주세요.');
+      return;
+    }
+
+    const user = USER_DATA.find(u => u.email.toLowerCase() === email.toLowerCase());
+
+    if (!user || user.password !== password) {
+      showErrorModal('비밀번호가 일치하지 않습니다.');
+      return;
+    }
+
+    window.location.assign('/items');
+  });
 });

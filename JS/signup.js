@@ -45,10 +45,10 @@ function validatePassword () {
 }
 
 function validatePasswordConfirm() {
-  const v = passwordConfirmInput.value.trim()
-  if (v === '') {showError(passwordConfirmInput, '비밀번호를 입력해주세요.'); return false; }
-  if (v !== passwordInput.value.trim()) {showError(passwordConfirmInput, '비밀번호가 일치하지 않습니다.'); return false; }
-  clearError(passwordConfirmInput); return true;
+  const v = passwordConfirminput.value.trim()
+  if (v === '') {showError(passwordConfirminput, '비밀번호를 입력해주세요.'); return false; }
+  if (v !== passwordInput.value.trim()) {showError(passwordConfirminput, '비밀번호가 일치하지 않습니다.'); return false; }
+  clearError(passwordConfirminput); return true;
 }
 
 function setButtonState() {
@@ -60,12 +60,12 @@ function setButtonState() {
 emailInput.addEventListener('input', setButtonState);
 nicknameInput.addEventListener('input', setButtonState)
 passwordInput.addEventListener('input',setButtonState);
-passwordConfirmInput.addEventListener('input', setButtonState);
+passwordConfirminput.addEventListener('input', setButtonState);
 
 emailInput.addEventListener('focusout', validateEmail);
 nicknameInput.addEventListener('focusout', validateNickname);
 passwordInput.addEventListener('focusout', validatePassword);
-passwordConfirmInput.addEventListener('focusout', validatePasswordConfirm);
+passwordConfirminput.addEventListener('focusout', validatePasswordConfirm);
 
 form.addEventListener('submit', (e) => {
   const ok = validateEmail() && validateNickname() && validatePassword() && validatePasswordConfirm();
@@ -96,5 +96,5 @@ form.addEventListener('submit', (e) => {
     alert('사용중인 이메일입니다.');
     return;
   }
-  window.location.assign('/login')
-})
+  window.location.assign('../login/login.html')
+});

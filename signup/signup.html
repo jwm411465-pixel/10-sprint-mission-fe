@@ -6,6 +6,7 @@
   <title>회원가입</title>
   <link rel="stylesheet" href="../css/signup.css">
   <script src="/JS/signup.js" defer></script>
+  <script src="/JS/utils/madal.js" defer></script>
 </head>
 <body>
     <div class="header">
@@ -71,6 +72,14 @@
     </div>
     <div class="login">
       <span>이미 회원이신가요?</span> <a href="../login/login.html">로그인</a> 
+    </div>
+
+    <div id="errorModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-panel" role="document">
+        <p id="errorModalMessage" class="modal-message"></p>
+        <button id="errorModalCloseBtn" class="modal-close">확인</button>
+      </div>
     </div>
   </body>
 </html>
