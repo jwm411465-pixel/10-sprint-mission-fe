@@ -20,6 +20,7 @@ export function hideErrorModal() {
   modal.classList.remove('show');
   modal.setAttribute('aria-hidden', 'true');
 }
+
 document.addEventListener('click', (e) => {
   if (e.target.dataset.close === 'true') hideErrorModal();
 });

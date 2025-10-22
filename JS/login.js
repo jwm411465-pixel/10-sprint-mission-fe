@@ -58,32 +58,16 @@ function validatePassword() {
 }
 
 function setButtonState() {
-  const ok = validateEmail() && validatePassword();
-  loginBtn.disabled = !ok;
+  const emailValue = emailInput.value.trim();
+  const passwordValue = passwordInput.value.trim();
+
+  const emailOk = emailValue !== '' && emailInput.validity.valid;
+  const passwordOk = passwordValue.length >= 8;
+
+  loginBtn.disabled = !(emailOk && passwordOk);
 }
 
-emailInput.addEventListener('input', setButtonState);
-passwordInput.addEventListener('input', setButtonState);
-emailInput.addEventListener('focusout', validateEmail);
-passwordInput.addEventListener('focusout', validatePassword);
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const email = emailInput.value.trim();
-  const password = passwordInput.value.trin();
-
-  if (!email || !password) {
-    showErrorModal('이메일과 비밀번호를 입력해주세요.');
-    return;
-  }
-  window.location.assign('/item')
-})
-
-
-setButtonState();
-
-import { showErrorModal } from './utils/modal.js';
+import { showErrorModal } from './utils/madal.js';
 
 const USER_DATA = [
   { email: 'codeit1@codeit.com', password: "codeit101!" },
@@ -94,31 +78,30 @@ const USER_DATA = [
   { email: 'codeit6@codeit.com', password: "codeit606!" },
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('form[action="login"]');
-  const emailInput = document.getElementById('username');
-  const passwordInput = document.getElementById('password');
+emailInput.addEventListener('input', setButtonState);
+passwordInput.addEventListener('input', setButtonState);
+emailInput.addEventListener('focusout', validateEmail);
+passwordInput.addEventListener('focusout', validatePassword);
 
-  if (!form) return;
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
 
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+  if (!email || !password) {
+    showErrorModal('이메일과 비밀번호를 입력해주세요.');
+    return;
+  }
 
-    if (!email || !password) {
-      showErrorModal('이메일과 비밀번호를 입력해주세요.');
-      return;
-    }
+  const user = USER_DATA.find((u) => u.email.toLowerCase() === email.toLowerCase());
 
-    const user = USER_DATA.find(u => u.email.toLowerCase() === email.toLowerCase());
+  if (!user || user.password !== password) {
+    showErrorModal('비밀번호가 일치하지 않습니다.');
+    return;
+  }
 
-    if (!user || user.password !== password) {
-      showErrorModal('비밀번호가 일치하지 않습니다.');
-      return;
-    }
-
-    window.location.assign('/items');
-  });
+  window.location.assign('/items');
 });
+
+setButtonState();
